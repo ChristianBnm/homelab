@@ -1,0 +1,20 @@
+# PostgreSQL data
+docker/postgres/data/
+
+# Local/generated data
+data/
+
+# Backups
+backups/
+
+# Environment variables / secrets
+.env
+.env.*
+
+# IDE / editors
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
