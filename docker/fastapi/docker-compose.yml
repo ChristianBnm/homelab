@@ -1,0 +1,19 @@
+services:
+  api:
+    build: .
+    container_name: homelab-fastapi
+    ports:
+      - "8000:8000"
+    environment:
+      DB_HOST: postgres
+      DB_PORT: 5432
+      DB_NAME: homelab
+      DB_USER: homelab
+      DB_PASSWORD: homelab_dev
+    restart: unless-stopped
+    networks:
+      - homelab-network
+
+networks:
+  homelab-network:
+    external: true

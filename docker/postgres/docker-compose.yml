@@ -11,3 +11,9 @@ services:
     volumes:
       - ./data:/var/lib/postgresql/data
     restart: unless-stopped
+    networks:
+      - homelab-network
+
+networks:
+  homelab-network:
+    external: true
