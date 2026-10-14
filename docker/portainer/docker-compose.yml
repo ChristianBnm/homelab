@@ -1,0 +1,19 @@
+﻿services:
+  portainer:
+    image: portainer/portainer-ce:lts
+    container_name: homelab-portainer
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:9443:9443"
+    volumes:
+      - portainer-data:/data
+      - /var/run/docker.sock:/var/run/docker.sock
+    networks:
+      - homelab-network
+
+volumes:
+  portainer-data:
+
+networks:
+  homelab-network:
+    external: true
